@@ -1,0 +1,25 @@
+img.profile-img {
+  border-radius: 50%;
+}
+
+.affiliation {
+  font-size: 1.4rem;
+}
+
+.bibtexentry {
+  margin-bottom: 1em;
+}
+
+.bibtexentry .title {
+  font-weight: bold;
+}
+
+.bibtexentry .description {
+  display: block;
+  margin-left: 1em;
+  font-size: 1rem;
+}
+
+.bibtexentry [class="me"] {
+  font-weight: bold;
+}

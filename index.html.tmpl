@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Francisco Maturana">
+  <meta name="description"
+    content="Francisco Maturana's personal page. PhD student at the Computer Science Department at Carnegie Mellon University.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Francisco Maturana @ CMU</title>
+
+  <link rel="stylesheet" href="css/tufte.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+
+<body id="home">
+  <article>
+
+    <h1>Francisco Maturana <span class="affiliation">@ CMU</span></h1>
+    <section>
+      <p>fmaturan<span style="display:none">null</span>@c<span style="display:none">null</span>s.cmu.edu</p>
+    </section>
+
+    <h2>About me</h2>
+
+    <section>
+      <p>
+        <input type="checkbox" id="mn-demo" class="margin-toggle" checked />
+        <span class="marginnote">
+          <img src="img/headshot.jpg" alt="A picture of me" width="150" height="auto" class="profile-img">
+        </span>
+      </p>
+      <p>I am a PhD Student in the <a href="https://csd.cmu.edu/"><abbr title="Computer Science Department">CSD</abbr></a> and
+      	the <a href="https://www.pdl.cmu.edu/"><abbr title="Parallel Data Lab">PDL</abbr></a> at
+        <a href="https://www.cmu.edu/"><abbr title="Carnegie Mellon University">CMU</abbr></a> doing research on Coding Theory for Distributed Storage Systems.
+        I have the privilege of being advised by <a href="http://cs.cmu.edu/~rvinayak/">Rashmi Vinayak</a>.</p>
+      <p>Previously, I was an undergraduate and master's student at <a href="https://www.uc.cl/"><abbr
+          title="Pontificia Universidad Católica de Chile">PUC Chile</abbr></a>, where I was advised by <a
+          href="http://criveros.sitios.ing.uc.cl/">Cristian Riveros</a>.</p>
+    </section>
+
+    <h2>Publications</h2>
+
+    <section id="bibtex_display">
+      {{ range (datasource "biblio") -}}
+        <p class="bibtexentry">
+          {{ range $pub := . -}}
+            <a class="url no-tufte-underline hover-tufte-underline" href="{{ $pub.url }}"><span class="title">{{ $pub.title }}</span></a>,
+            <span class="year">{{ $pub.year }}</span>
+            <br>
+            <span class="description">
+              <span class="shortname">{{ $pub.shortname }}</span>
+              <br>
+              <span class="author">{{ $pub.author | regexp.Replace "(Francisco Maturana)" "<span class=\"me\">$1</span>" }}</span>
+              <br>
+            </span>
+          {{ end -}}
+        </p>
+      {{ end -}}
+    </section>
+
+  </article>
+</body>
+
+</html>
